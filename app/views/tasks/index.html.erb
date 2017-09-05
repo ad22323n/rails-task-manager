@@ -1,0 +1,17 @@
+<h1>Tasks index</h1>
+<h1>All the tasks a user can do</h1>
+
+
+<% @tasks.each do |t| %>
+  <h2><%= t.name%></h2>
+  <p><%= t.details %></p>
+
+  <%= link_to "See this tasks",task_path(t) %>
+
+  <%= link_to "Update task",task_edit_path(t) %>
+
+  <%= link_to "Remove task",task_path(t), method: :delete, data: {confirm: "Are you suuuuure?"} %>
+<%end%>
+
+
+
